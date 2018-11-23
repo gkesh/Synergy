@@ -1,0 +1,161 @@
+
+.box {
+  width: 40%;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.2);
+  padding: 35px;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+}
+
+.button {
+  font-size: 1em;
+  padding: 10px;
+  color: #fff;
+  border: 2px solid #06D85F;
+  border-radius: 20px/50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.button:hover {
+  background: #06D85F;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 35%;
+  position: relative;
+}
+
+.popup h2 {
+  margin-top: 0;
+  margin-bottom: 1.5vh;
+  text-align:center;
+  color: #333;
+  font-family: "Caviar Dreams";
+  font-size:3em;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  cursor:pointer;
+  color: red;
+}
+.popup .content {
+  max-height: 80%;
+  overflow: auto;
+}
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup{
+    width: 70%;
+  }
+}
+.datatable{
+	width: 45vw;
+	border: 1px solid black;
+	font-size:1vw;
+}
+td{
+	text-align:center;
+}
+label {
+   cursor: pointer;
+   font-size:1.5vh;
+   opacity:0.9;
+   font-weight:500;
+   font-family: "Caviar Dreams";
+}
+#profileimage {
+   opacity: 0;
+   position: absolute;
+   z-index: -1;
+}
+.imgcontainer {
+    text-align: center;
+    margin: 0 0 12px 0;
+    position: relative;
+}
+#smallimg>img{
+	width:100px;
+	height:100px;
+}
+.imgcontainer>img{
+	margin-top:20px;
+	margin-bottom:5px;
+	border-radius:50%;
+	border:3px solid black;
+	-webkit-box-shadow: 0 0 5px black;
+    box-shadow: 0 0 5px black;
+	transition: 0.2s linear;
+}
+.imgcontainer>img:hover{
+	transform: scale(1.1);
+}
+#table-container{
+	width:60%;
+	padding-bottom:5%;
+}
+#userinfo{
+	margin-top:1.5vw;
+	color:black;
+	font-weight:bold;
+	font-family: "Caviar Dreams";
+	font-size:1.2vw;
+	vertical-align:middle;
+}
+.imgtd{
+	text-align:left;
+	padding:0.8vw;
+}
+.imgtd>img{
+	width:1.5vw;
+	height:auto;
+}
+li>a{
+	font-weight:bold;
+}
+li{
+	padding-top:1.5vh;
+}
+#linkpack{
+	margin-left:2vw;
+	margin-bottom: 8vh;
+}
+#bottomlb{
+	margin-left: 0.7vw;
+	margin-bottom:3vh;
+	font-weight:bold;
+}

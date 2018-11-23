@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Welcome!</title>
+<link rel="stylesheet" type="text/css" href="$stylesheet$/wlcmpg.css"/>
+<script language="javascript" type="text/javascript">
+	function cursorchng(){
+		document.getElementById("gb").style="cursor:pointer";
+		document.getElementById("snmnu").src="$images$/oncimg.png";
+
+	}
+	function revert(){
+		document.getElementById("snmnu").src="$images$/signin-menu.png";
+	}
+	function dispUserData(){
+		var xhr;
+		if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+			xhr = new XMLHttpRequest();
+		} else if (window.ActiveXObject) { // IE 8 and older
+			xhr = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+	var data = "start= true";
+     xhr.open("POST", "$script$/get_session_data.php", true); 
+     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");                  
+     xhr.send(data);
+	 xhr.onreadystatechange = display_data;
+	function display_data() {
+	 if (xhr.readyState == 4) {
+      if (xhr.status == 200) {  
+		document.getElementById("setName").innerHTML=xhr.responseText;
+      } else {
+        alert('There was a problem with the request.');
+      }
+     }
+	}
+}
+</script>
+</head>
+
+<body onload="dispUserData()">
+<font face="Caviar Dreams">
+<div id="wrapper">
+<center>
+	<div id="titlebar">
+		<span id="gb" onmouseover="cursorchng()" onmouseleave="revert()"><a href="homepage.php" accesskey="h"><img id="snmnu" src="$images$/signin-menu.png"/></a>
+		</span>
+		<img src="$images$/header3.png"/>Synergy Music <sup>&copy;</sup>
+	</div>
+	<hr style="height:1px;border:none;color:lightgray;background-color:lightgray;" />
+</center>
+	<div id="bdy">
+		<div id="bda">
+			<h1 id="wlcmtitle">
+				Welcome to Synergy, <span id="setName"></span>. Thank you for joining our community!
+			</h1>
+			<br/>
+			<p id="wlcmpara">
+				We have a truckful of awesome music you can browse through. Enjoy the latest releases from your favourite artists anytime, anywhere. Create playlists and stream music on the go. Check out our library for a large collection of hit tracks of all time.
+			</p><br/><br/>
+			<button	class="trial3" onClick="window.location.href='Stores.php'" ><font face="Caviar Dreams"><span id="btnp2">Library &gt;</span></font></button>
+		</div>
+		<div id="bdb">
+			<img src="$images$/wlcmpg.png" alt="welcome=page=img" align="right"/>
+		</div>
+	</div>
+	<div id="footer">
+		<span id="ftrlgo"><a href="homepage.php"><center><img src="$images$/header2.png"/></center></a>
+		</span>
+		<span id="ftpara1">
+			<h4>Shop with us</h4>
+			<ol>
+				<li><a href="contents.html">Albums</a></li>
+				<li><a href="contents.html">Artists</a></li>
+				<li><a href="contents.html">Songs</a></li>
+				<li><a href="contents.html">Top Rated</a></li>
+				<li><a href="contents.html">Top Played</a></li>
+			</ol>
+		</span>
+		<span id="ftpara2">
+			<h4>Find Us</h4>
+			<ol>
+				<li><a href="https://www.google.com.np/maps/place/Yogbir+Singh+Marg,+Kathmandu+44600/@27.707159,85.3080365,18z/data=!3m1!4b1!4m5!3m4!1s0x39eb18ff3adeb63b:0x1ef9ba913b90615f!8m2!3d27.707159!4d85.3091178?hl=en">Google Maps</a></li>
+				<li><a href="contents.html">Local Maps</a></li>
+				<li><a href="contents.html">Street View</a></li>
+			</ol>
+		</span>
+		<span id="ftpara3">
+			<h4>Languages</h4>
+			<ol>
+				<li><a href="contents.html">Nepali</a></li>
+				<li><a href="contents.html">Japanese</a></li>
+				<li><a href="contents.html">Spanish</a></li>
+				<li><a href="contents.html">French</a></li>
+				<li><a href="contents.html">Mandarin</a></li>
+				<li><a href="contents.html">Hindi</a></li>
+				<li><a href="contents.html">Korean</a></li>
+				<li><a href="contents.html">Arabic</a></li>
+			</ol>
+		</span>
+		<span id="ftpara4">
+			<h4>Contact us</h4>
+			<ol>
+				<li><a href="http://www.facebook.com">Facebook</a></li>
+				<li><a href="http://www.mail.google.com">Google</a></li>
+				<li><a href="http://www.twitter.com">Twitter</a></li>
+				<li><a href="http://www.instagram.com">Instagram</a></li>
+				<li><a href="http://www.youtube.com">YouTube</a></li>
+			</ol>
+		</span>
+		<div id="bottomlb">
+		<hr color="black" width="90%"/>
+		&nbsp;&nbsp;&nbsp;<img src="$images$/sclimg.png" usemap="#mapthis"/>
+		<map name="mapthis">
+		<area shape ="circ" coords="19,20,19" href= "https://www.facebook.com"/>
+		<area shape ="circ" coords="76,20,19" href= "https://www.twitter.com"/>
+		<area shape ="circ" coords="133,20,19" href= "https://www.instagram.com"/>
+		</map>
+		<br/>
+		<center>
+			Copyright <sup>&copy;</sup> Synergy Music Co. Ltd. 2017. All rights are reserved. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Legal</a>&nbsp;&nbsp;<font color="e6e6e6"><b>|</b></font>&nbsp;&nbsp;<a href="#">Privacy Policy</a>&nbsp;&nbsp;<font color="e6e6e6"><b>|</b></font>&nbsp;&nbsp;<a href="#">Terms of Use</a>&nbsp;&nbsp;<font color="e6e6e6"><b>|</b></font>&nbsp;&nbsp;<a href="#">Return and refund</a></center>
+		</div>
+	</div>
+</div>	
+</font>
+</body>
+</html>
